@@ -34,12 +34,20 @@ venv.bak/
 .DS_Store
 Thumbs.db
 
-# HuggingFace cache (large model files)
+# Model files & Large binaries
+sarcasm_model/
 *.bin
 *.safetensors
 *.msgpack
 *.h5
+*.pt
+*.onnx
 
-# Build artifacts
-build_notebook.py
-build_rookie_nb.py
+# Checkpoints
+checkpoint-*/
+
+# Datasets
+dataset/*.csv
+dataset/*.json
+*.csv
+*.xlsx
