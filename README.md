@@ -162,5 +162,3 @@ This project is a foundational step towards an upcoming, more advanced system ca
 Stay tuned… it’s gonna be big 👀
 
 ---
-
-Made with 💻 + confusion + emotional damage.
