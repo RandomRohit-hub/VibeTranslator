@@ -1,4 +1,4 @@
-# 💬 ConvoSense AI — Decode the Vibes Mate 
+# 💬 ConvoSense AI — Decode the Vibes Mate
 
 ## 🧠 What’s this all about?
 
@@ -38,7 +38,7 @@ This project goes deeper:
 
 ## 🔥 Features
 
-* 🧠 **Custom-trained sarcasm model**
+* 🧠 **Custom-trained sarcasm model (trained from scratch)**
 * 💬 **Emotion detection**
 * 🎯 **Intent analysis**
 * 🌍 **Multilingual support**
@@ -48,13 +48,87 @@ This project goes deeper:
 
 ---
 
+## 🧠 Workflow (How this beast actually works)
+
+```
+User Input (chat message)
+        ↓
+Context Injection (previous messages)
+        ↓
+Custom Sarcasm Model 
+        ↓
+Emotion Detection + Sentiment Analysis
+        ↓
+Intent Classification
+        ↓
+All signals combined
+        ↓
+LLM (Ollama) for reasoning
+        ↓
+Final Output:
+   - Meaning
+   - Emotion
+   - Intent
+   - Suggested Reply
+```
+
+👉 Translation layer removed for speed
+👉 Fully optimized pipeline for real-time feel
+
+---
+
+## 🧠 Custom Model + Dataset
+
+This is where things get serious 👇
+
+### 🔥 Custom Sarcasm Model
+
+* Built using **DistilBERT / lightweight transformer**
+* Fine-tuned specifically for **conversations IYKYK**
+* Optimized for:
+
+  * Hinglish
+  * Marathi tone
+  * Passive-aggressive messages
+
+---
+
+### 📊 Dataset
+
+The model is trained on a **custom multilingual dataset (~10,000+ samples)** including:
+
+* English
+* Hindi
+* Hinglish
+* Marathi
+
+👉 Data includes:
+
+* Real conversational patterns
+* Emotion-heavy sentences
+* Passive-aggressive and sarcastic tones
+
+---
+
+### ⚠️ Important Note (Ethical)
+
+The dataset is:
+
+* **Anonymized**
+* Based on **generic conversational patterns**
+* Used strictly for **educational and research purposes**
+
+👉 No personal or sensitive data is exposed.
+
+---
+
 ## 😂 Why this exists
 
 Because:
 
-> “I’m fine” is never actually fine.
-> “Do whatever you want” is a trap.
-> “Okay 👍” could mean *anything*.
+> “I’m fine” is never actually fine
+> “Do whatever you want” is a trap
+> “Okay 👍” could mean *anything*
 
 And honestly…
 someone had to solve this problem 😭
@@ -65,9 +139,9 @@ someone had to solve this problem 😭
 
 * Python
 * HuggingFace Transformers
-* Custom BERT model
+* Custom BERT Model
 * Streamlit
-* Ollama
+* Ollama (Local LLM)
 * Scikit-learn
 
 ---
@@ -106,15 +180,8 @@ http://localhost:8501
 Acha thik hai tum busy ho toh rehne do
 ```
 
-👉 Watch the AI decode the drama 😬
-
----
-
-## 🧠 How it works
-
-```
-Input → Sarcasm Model → Emotion + Intent → Context → LLM → Output
-```
+👉 Watch the AI go:
+**“Yeah nah… she’s not fine mate” 😬**
 
 ---
 
@@ -128,10 +195,10 @@ No spying. No nonsense.
 
 ## 🎯 Future Improvements
 
-* Real-time chat analysis
-* Voice input
+* Real-time chat analysis (WhatsApp style 👀)
+* Voice input + tone detection
 * Chrome extension
-* Better sarcasm accuracy
+* Higher sarcasm accuracy
 
 ---
 
@@ -162,3 +229,5 @@ This project is a foundational step towards an upcoming, more advanced system ca
 Stay tuned… it’s gonna be big 👀
 
 ---
+
+Made with Predator + confusion + emotional damage.
