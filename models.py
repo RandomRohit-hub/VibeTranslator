@@ -19,6 +19,25 @@ from transformers import M2M100ForConditionalGeneration, M2M100Tokenizer
 _model_name = "facebook/m2m100_418M"
 tokenizer_m2m = M2M100Tokenizer.from_pretrained(_model_name)
 model_m2m = M2M100ForConditionalGeneration.from_pretrained(_model_name)
+
+def get_safe_pipeline(task, model, **kwargs):
+    """
+    Attempts to load a pipeline normally. If any error occurs (like connection issues),
+    it falls back to loading from local files only.
+    """
+    try:
+        # First attempt: normal load (allows checking for updates)
+        return pipeline(task, model=model, **kwargs)
+    except Exception as e:
+        # Fallback to local files only for ANY error (connection, etc.)
+        # This is robust for offline/unstable environments
+        print(f"⚠️  Normal load failed for {model}. Error: {str(e)[:100]}... Falling back to local cache.")
+        try:
+            return pipeline(task, model=model, local_files_only=True, **kwargs)
+        except Exception as e2:
+            print(f"❌ Failed to load {model} even from cache: {e2}")
+            raise e2
+
 # We pack them into a simple object so utils.py can still treat it like a 'translator'
 class Translator:
     def __init__(self, model, tokenizer):
